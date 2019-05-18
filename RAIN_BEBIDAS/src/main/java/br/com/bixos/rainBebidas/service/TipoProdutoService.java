@@ -1,5 +1,7 @@
 package br.com.bixos.rainBebidas.service;
 
-public interface TipoProdutoService {
+import br.com.bixos.rainBebidas.model.TipoProduto;
+
+public interface TipoProdutoService extends BasicCrud<TipoProduto> {
 
 }

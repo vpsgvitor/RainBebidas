@@ -1,5 +1,7 @@
 package br.com.bixos.rainBebidas.service;
 
-public interface MovimentoService {
+import br.com.bixos.rainBebidas.model.Movimento;
+
+public interface MovimentoService extends BasicCrud<Movimento> {
 
 }

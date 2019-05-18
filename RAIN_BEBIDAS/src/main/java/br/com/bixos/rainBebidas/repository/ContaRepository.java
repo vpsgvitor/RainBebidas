@@ -1,9 +1,12 @@
 package br.com.bixos.rainBebidas.repository;
 
-import org.springframework.data.jpa.mapping.JpaPersistentEntity;
+import javax.annotation.Resource;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.bixos.rainBebidas.model.Conta;
 
-public interface ContaRepository extends JpaPersistentEntity<Conta> {
+@Resource
+public interface ContaRepository extends JpaRepository<Conta, Long> {
 
 }

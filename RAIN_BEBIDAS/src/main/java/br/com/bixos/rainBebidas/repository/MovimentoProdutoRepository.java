@@ -1,9 +1,12 @@
 package br.com.bixos.rainBebidas.repository;
 
-import org.springframework.data.jpa.mapping.JpaPersistentEntity;
+import javax.annotation.Resource;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.bixos.rainBebidas.model.MovimentoProduto;
 
-public interface MovimentoProdutoRepository extends JpaPersistentEntity<MovimentoProduto> {
+@Resource
+public interface MovimentoProdutoRepository extends JpaRepository<MovimentoProduto, Long> {
 
 }

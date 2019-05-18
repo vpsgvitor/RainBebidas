@@ -1,5 +1,7 @@
 package br.com.bixos.rainBebidas.service;
 
-public interface ContaService {
+import br.com.bixos.rainBebidas.model.Conta;
+
+public interface ContaService extends BasicCrud<Conta> {
 
 }

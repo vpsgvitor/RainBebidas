@@ -1,7 +1,35 @@
 package br.com.bixos.rainBebidas.service.impl;
 
-import br.com.bixos.rainBebidas.service.EstoqueService;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.bixos.rainBebidas.model.Produto;
+import br.com.bixos.rainBebidas.repository.EstoqueRepository;
+import br.com.bixos.rainBebidas.service.EstoqueService;
+import br.com.bixos.rainBebidas.service.ProdutoService;
+
+@Service
 public class EstoqueServiceImpl implements EstoqueService {
 
+	@Autowired
+	private EstoqueRepository repository;
+	@Autowired
+	private ProdutoService produtoService;
+
+	@Override
+	public List<Produto> produtosEmEstoque() {
+		return repository.produtosEmEstoque();
+	}
+
+	@Override
+	public List<Produto> produtosEmFalta() {
+		return repository.produtosEmFalta();
+	}
+
+	@Override
+	public List<Produto> todosProdutos() {
+		return produtoService.listar();
+	}
 }
