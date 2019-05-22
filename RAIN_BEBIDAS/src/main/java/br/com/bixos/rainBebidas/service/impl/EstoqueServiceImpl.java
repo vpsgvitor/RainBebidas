@@ -19,16 +19,6 @@ public class EstoqueServiceImpl implements EstoqueService {
 	private ProdutoService produtoService;
 
 	@Override
-	public List<Produto> produtosEmEstoque() {
-		return repository.produtosEmEstoque();
-	}
-
-	@Override
-	public List<Produto> produtosEmFalta() {
-		return repository.produtosEmFalta();
-	}
-
-	@Override
 	public List<Produto> todosProdutos() {
 		return produtoService.listar();
 	}

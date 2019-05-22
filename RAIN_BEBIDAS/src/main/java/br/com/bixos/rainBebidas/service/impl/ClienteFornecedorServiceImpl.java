@@ -35,4 +35,5 @@ public class ClienteFornecedorServiceImpl implements ClienteFornecedorService {
 	public ClienteFornecedor findOne(Long objectId) {
 		return repository.findOne(objectId);
 	}
+
 }

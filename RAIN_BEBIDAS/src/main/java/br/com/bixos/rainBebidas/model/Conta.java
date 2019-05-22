@@ -1,8 +1,9 @@
 package br.com.bixos.rainBebidas.model;
 
 import javax.persistence.Entity;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import br.com.bixos.rainBebidas.model.util.StatusConta;
@@ -22,6 +23,7 @@ public class Conta implements EntidadePersistente {
 	private static final long serialVersionUID = 44673227196133112L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 
 	private Double valor;

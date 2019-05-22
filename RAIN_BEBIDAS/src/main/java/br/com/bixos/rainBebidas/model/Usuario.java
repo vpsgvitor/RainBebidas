@@ -1,6 +1,8 @@
 package br.com.bixos.rainBebidas.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 import org.springframework.data.annotation.Id;
 
@@ -20,6 +22,7 @@ public class Usuario implements EntidadePersistente {
 	private static final long serialVersionUID = 8962292495929538445L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 
 	private Pessoa pessoa;
