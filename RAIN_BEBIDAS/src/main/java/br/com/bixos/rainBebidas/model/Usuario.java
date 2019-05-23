@@ -1,6 +1,5 @@
 package br.com.bixos.rainBebidas.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,8 +24,7 @@ public class Usuario implements EntidadePersistente {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 
-	@Column(name = "codpessoa")
-	private Pessoa pessoa;
+	private String nome;
 
 	private String email;
 
