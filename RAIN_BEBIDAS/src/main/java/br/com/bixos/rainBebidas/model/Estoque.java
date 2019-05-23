@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import lombok.AllArgsConstructor;
@@ -26,5 +29,8 @@ public class Estoque implements EntidadePersistente {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 
+	@OneToMany
+	@JoinTable(name = "estoque_produto", joinColumns = { @JoinColumn(name = "codestoque") }, inverseJoinColumns = {
+			@JoinColumn(name = "codproduto") })
 	private List<Produto> produtos;
 }

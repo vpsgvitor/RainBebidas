@@ -1,6 +1,8 @@
 package br.com.bixos.rainBebidas.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,8 +30,10 @@ public class Conta implements EntidadePersistente {
 
 	private Double valor;
 
+	@Enumerated(EnumType.STRING)
 	private TipoConta tipoConta;
 
+	@Enumerated(EnumType.STRING)
 	private StatusConta situacao;
 
 	private ClienteFornecedor clienteFornecedor;

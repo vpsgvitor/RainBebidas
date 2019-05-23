@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import lombok.AllArgsConstructor;
@@ -28,8 +31,14 @@ public class Empresa implements EntidadePersistente {
 
 	private Estoque estoque;
 
+	@OneToMany
+	@JoinTable(name = "empresa_usuario", joinColumns = { @JoinColumn(name = "codempresa") }, inverseJoinColumns = {
+			@JoinColumn(name = "codusuario") })
 	private List<Usuario> usuarios;
 
+	@OneToMany
+	@JoinTable(name = "empresa_cliente_fornecedor", joinColumns = {
+			@JoinColumn(name = "codempresa") }, inverseJoinColumns = { @JoinColumn(name = "codclientefornecedor") })
 	private List<ClienteFornecedor> clientesFornecedores;
 
 }
