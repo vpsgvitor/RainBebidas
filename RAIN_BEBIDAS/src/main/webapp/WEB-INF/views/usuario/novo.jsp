@@ -30,12 +30,22 @@
 
 			<h3 class="display-4" style="margin-top: 33px;">Pessoa</h3>
 
-
 		</div>
 		<div class="row justify-content-md-center">
 			<div class="col-sm-12 col-md-4">
-				<form action="/pessoa/salvar" method="post" class="col">
+				<form action="/usuario/salvar" method="post" class="col">
 
+				<fieldset>
+				<legend>Informacoes do Usuario</legend>
+					<div class="form-group">
+						<input type="text" class="form-control" id="user" name="email" placeholder="Email do usuario" value="email">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" value="senha">
+					</div>
+				</fieldset>
+				<fieldset>
+				<legend>Informacoes da pessoa</legend>
 					<div class="form-group">
 						<input type="hidden" class="form-control" id="codigo" name="codigo" value="${pessoa.codigo}">
 						<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="pessoa.nome">
@@ -44,19 +54,18 @@
 						<input type="text" class="form-control" id="cpf" name="CPF" placeholder="CPF" value="pessoa.CPF">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="nome" name="telefone" placeholder="Telefone" value="pessoa.telefone">
+						<input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="pessoa.telefone">
 					</div>
 					<div class="form-group">
-						<input id="date" type="date">
+						<input type="date" class="form-control" id="dataNascimento" name="Data Nascimento" placeholder="Data Nascimento" value="pessoa.dataNascimento">
 					</div>
-
+				</fieldset>
 					<button type="submit" class="btn btn-primary">Salvar</button>
 
 				</form>
 			</div>
 		</div>
 		<footer class="text-center" style="margin-top: 33px;">
-			<a href="https://www.facebook.com/victhor.baesso" target="_BLANK" class="nav-link">João Victor Baesso®</a>
 		</footer>
 	</div>
 </body>
