@@ -1,6 +1,6 @@
 <h1>Rain Bebidas® - O Retorno</h1>
 
-<h2>Trabalho interdisciplionar</h2>
+<h2>Trabalho interdisciplinar</h2>
 
 <h3>Programacao Web</h3>
 <h3>Programacao Utilizando Frameworks</h3>
