@@ -13,7 +13,7 @@
 	</head>
 <body>
 
-	<form action="/clienteFornecedor/salvar" method="post" class="col">
+	<form action="salvar" method="POST" class="col">
 							
 		<div class="form-group">
 			<input type="hidden" class="form-control" id="codigo" name="codigo" value="${codigo}">
