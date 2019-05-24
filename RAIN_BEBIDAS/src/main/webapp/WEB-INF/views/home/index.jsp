@@ -1,95 +1,131 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="pt">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-.paypal-button button.large {
-	min-width: 150px;
-}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rain Bebidas - O Retorno</title>
 
-.paypal-label {
-	margin-left: 30px;
-}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-.paypal-input {
-	margin: 0 20px !important;
-	width: 100px !important;
-	height: 25px !important;
-	border-radius: 5px !important;
-	text-align: center !important;
-}
+	<link rel="icon" href="img/beer.png" />
 
-.paypal-button {
-	min-height: 40px;
-}
-
-.textPay {
-	text-align: center;
-	margin: 10px 50px;
-	font-size: 13px;
-	display: block;
-}
-#usd-button form ,
-#brl-button form {
-	margin: 0;
-}
-
-#usd-button img,
-#brl-button img {
-	margin: 20px auto 0 auto;
-	display: block;
-}
-
-</style><title>Home page</title>
 </head>
-<body> 
-		<p>Your project is configured! Now, what do you think about donate :)?</p>
-		<div id="brl-button">
-			<img src="http://www.setupmyproject.com/images/flags/ptbr.png" alt="brazilian flag"/> 
-			<p class="textPay">
-				A nossa ideia ?? que voc?? inicie o seu projeto o mais r??pido poss??vel, sem perder tempo configurando frameworks e outros detalhes. Ainda tem muito mais por vir, projetos j?? com templates configurados, mais op????es de plugins dentro dos frameworks etc. Entendemos que nosso projeto realmente faz voc?? economizar tempo, ent??o, se for poss??vel, gostar??amos que voc?? nos desse uma ajuda fazendo uma doa????o.  									
-			</p>
-			<p class="textPay">
-				A nossa conta do Paypal ?? brasileira e, se a sua conta no Paypal tamb??m for brasileira, por conta das leis do nosso pa??s, temos que pedir que voc?? doe em reais. Ao lado tem a nossa sugest??o :).
-			</p>
-			<form method="post" action="https://www.paypal.com/cgi-bin/webscr" class="paypal-button" target="_top">
-					<div class="hide" id="errorBox"></div>
-						<input type="hidden" name="button" value="donate"/>
-						<input type="hidden" name="item_name" value="Configured project"/>						
-					
-						<input type="hidden" name="env" value=""/>
-						<input type="hidden" name="currency_code" value="BRL"/>
-						<input type="hidden" name="lc" value="pt_BR"/>
-						<input type="hidden" name="cmd" value="_donations"/>
-						<input type="hidden" name="business" value="DVGVTVC3E9TAN"/>
-						<input type="hidden" name="bn" value="JavaScriptButton_donate"/>
-						<button type="submit" class="paypal-button large">Doar</button>
-				</form>					
-			
-			
+<style>
+	.h-100vh {
+		height: 100vh;
+	}
+</style>
+
+<body>
+	<header class="" id="home">
+		<div class="w-100 d-inline-block h-100vh">
+
+
+			<nav class="navbar navbar-expand-md navbar-light bg-light">
+				<a class="navbar-brand" href="#">
+					Rain Bebidas
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="nav navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="#somos">A Empresa</a></li>
+						<li class="nav-item"><a class="nav-link" href="#produtos">O Produto</a></li>
+						<li class="nav-item"><a class="nav-link" href="#filiais">Matriz</a></li>
+						<li class="nav-item"><a class="nav-link" href="#page-footer">Contato</a></li>
+						<li class="nav-item"><a class="nav-link" href="#page-footer">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="d-flex h-75">
+				<div class="row w-100 justify-content-center align-self-center">
+					<h1 class="display-4 ">Rain Bebidas - O Retorno</h1>
+				</div>
+			</div>
+
 		</div>
-		<div id="usd-button">
-			<img src="http://www.setupmyproject.com/images/flags/usen.png" alt="non brazilian flag"/>
-			<p class="textPay">
-				Our main goal is that you can start your project as fast as possible, without wasting time setting up frameworks and other details. There are a lot of things to come like project with already configured templates, more options of plugins for each framework etc. We really think that our project saves your time, so, if you can, we would like that you to contribute with us making a donation. 
-			</p>
-			<p class="textPay">
-				If you want to donate in dollar, use this button :).				
-			</p>
-			<form method="post" action="https://www.paypal.com/cgi-bin/webscr" class="paypal-button" target="_top">
-					<div class="hide" id="errorBox"></div>
-						<input type="hidden" name="button" value="donate"/>
-						<input type="hidden" name="item_name" value="Configured project"/>
-					
-						<input type="hidden" name="env" value=""/>
-						<input type="hidden" name="currency_code" value="USD"/>
-						<input type="hidden" name="lc" value="en_US"/>
-						<input type="hidden" name="cmd" value="_donations"/>
-						<input type="hidden" name="business" value="DVGVTVC3E9TAN"/>
-						<input type="hidden" name="bn" value="JavaScriptButton_donate"/>
-						<button type="submit" class="paypal-button large">Donate</button>
-			</form>			
-		</div>			</body>
+	</header>
+	<hr class="my-4">
+	<div class="container-fluid" id="container">
+		<div class="h-100vh" id="somos">
+			<div class="row justify-content-center">
+				<h1 class="display-3">A Empresa</h1>
+			</div>
+			<hr class="my-4">
+			<div class="row justify-content-center">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+					voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div class="row justify-content-center">
+
+
+				<div class="card col-md-5 p-0">
+					<img class="card-img-top" src="https://via.placeholder.com/400x180" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Joao Victor Baesso</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+
+				<div class="card col-md-5 p-0">
+					<img class="card-img-top" src="https://via.placeholder.com/400x180" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Vitor Paulo de Sa Galvan</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="h-100vh" id="produtos">
+			<div class="d-flex h-75">
+				<div class="row align-self-center m-0">
+					<div class="row text-center m-0">
+						<h1 class="display-3">O Produto</h1>
+					</div>
+					<hr class="my-4">
+					<div class="row justify-content-center m-0">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<footer class="h-100vh" id="page-footer">
+		<div class="d-flex h-75">
+			<div class="row w-100 justify-content-center align-self-center m-0">
+
+				<div class="row justify-content-center m-0">
+					<h4 class="">Rain Bebidas - O Retorno</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+
+				<div class="row justify-content-center m-0">
+					<p>Todos os direitos reservados ®</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
 </html>
