@@ -13,26 +13,27 @@ import br.com.bixos.rainBebidas.model.Usuario;
 import br.com.bixos.rainBebidas.service.UsuarioService;
 
 @Controller
+@RequestMapping("/usuario")
 public class UsuarioController {
 
 	@Autowired
 	private UsuarioService service;
 
-	@RequestMapping(value = "/usuario", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String visualizar(Model model) {
 		model.addAttribute("usuarios", service.listar());
 
 		return "usuario/visualizar";
 	}
 
-	@RequestMapping(value = "/usuario/salvar", method = RequestMethod.POST)
+	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
 	public ModelAndView salvar(Usuario user) {
 		service.salvar(user);
 
 		return new ModelAndView("redirect:/usuario");
 	}
 
-	@GetMapping("/usuario/excluir/{codigo}")
+	@GetMapping("/excluir/{codigo}")
 	public ModelAndView excluir(@PathVariable(value = "codigo") Long codigo) {
 		service.excluir(codigo);
 
