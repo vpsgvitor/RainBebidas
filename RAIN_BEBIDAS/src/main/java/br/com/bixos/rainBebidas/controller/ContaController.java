@@ -10,4 +10,9 @@ public class ContaController {
 
 	@Autowired
 	private ContaService service;
+	
+	private void pom() {
+		// TODO Auto-generated method stub
+// pau no cu do Spring
+	}
 }
