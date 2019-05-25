@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+
+.title {
+  font-family: 'Cinzel', serif;
+  color: white;
+}
+
+.text {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.menu-txtes {
+  font-family: 'Raleway', sans-serif;
+  color: lightgrey;
+  font-size: 17px;
+}
+
+.menu-txtes:hover {
+  color: white;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  color: white;
+  font-size: 22px;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.title-body-punk {
+  color: #fff;
+  text-shadow: 0 0 15px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #3ff, 0 0 150px #0ff;
+  position: relative;
+  top: 30%;
+  transform: translateY(-30%);
+  font-family: 'Cinzel', serif;
+  letter-spacing: 6px;
+  font-size: 42px;
+}
+
+#empresa {
+  background-image: url(../img/empresa-bk.jpg);
+}
+
+#produto {
+  background-image: url(../img/produto-bk.jpg);
+}
+
+#page-footer {
+  background-image: url(../img/footer-bk.jpg);
+}
+
+#faz-chover {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  background-size: cover;
+}
+
+.bk-escurecido {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bk-trans-parent {
+  background-color: transparent;
+}
+
+.br-9 {
+  border-radius: 9px;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .ajeita-altura {
+    height: auto;
+  }
+}
