@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar.scrolled {
+  background-image: url(../img/h1-bk.jpg);
+  transition: background-color 200ms linear;
+}
+
 .title {
   font-family: 'Cinzel', serif;
   color: white;
@@ -11,6 +20,11 @@
   color: white;
 }
 
+.text-list {
+  font-family: 'Raleway', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .menu-txtes {
   font-family: 'Raleway', sans-serif;
   color: lightgrey;
@@ -19,6 +33,10 @@
 
 .menu-txtes:hover {
   color: white;
+}
+
+.list-group-item{
+ background-color: rgba(255, 255, 255, 0.6);
 }
 
 .navbar-brand {
@@ -40,6 +58,15 @@
   font-family: 'Cinzel', serif;
   letter-spacing: 6px;
   font-size: 42px;
+}
+
+.link-bonito{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.link-bonito:hover{
+  color: darkred;
+  text-decoration: none;
 }
 
 #empresa {
@@ -67,7 +94,7 @@
 }
 
 .bk-escurecido {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .bk-trans-parent {
