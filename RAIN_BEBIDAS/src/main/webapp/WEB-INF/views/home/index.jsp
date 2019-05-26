@@ -38,7 +38,7 @@
 			</nav>
 
 			<div class="d-flex h-75">
-				<div class="row w-100 justify-content-center align-self-center">
+				<div class="row w-100 justify-content-center align-self-center m-0">
 					<h1 class="display-4 title-body-punk ">Rain Bebidas - O Retorno</h1>
 				</div>
 			</div>

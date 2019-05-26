@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,17 +33,16 @@ public class ClienteFornecedorController {
 	}
 
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
-	public ModelAndView salvar(ClienteFornecedor user) {
-		service.salvar(user);
-
-		return new ModelAndView("redirect:/cliente");
+	public ModelAndView salvar(@ModelAttribute("clienteFornecedor") ClienteFornecedor clienteFornecedor) {
+		service.salvar(clienteFornecedor);
+		return new ModelAndView("redirect:/clienteFornecedor");
 	}
 
 	@GetMapping("/excluir/{codigo}")
 	public ModelAndView excluir(@PathVariable(value = "codigo") Long codigo) {
 		service.excluir(codigo);
 
-		return new ModelAndView("redirect:/cliente");
+		return new ModelAndView("redirect:/clienteFornecedor");
 	}
 
 }

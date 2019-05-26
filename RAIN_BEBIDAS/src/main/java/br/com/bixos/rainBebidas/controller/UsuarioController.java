@@ -19,7 +19,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService service;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String visualizar(Model model) {
 		model.addAttribute("usuarios", service.listar());
 

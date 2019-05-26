@@ -3,29 +3,27 @@
 		<div class="container">
 			<div class="row justify-content-center titulo">
 			
-				<h3 class="display-4">Cliente / Fornecedor</h3>
+				<h3 class="display-4">Produtos</h3>
 			
 			</div>
 			<div class="row justify-content-md-center">
 						
 				<div class="col-md-12 col-lg-9">
-					<button type="button" class="btn btn-primary mb-4" onclick="location.href='clienteFornecedor/novo'">Novo</button>
+					<button type="button" class="btn btn-primary mb-4" onclick="location.href='estoque/novo'">Novo</button>
 					
 					<table class="table table-bordered table-hover table-striped">
 						<thead>
 							<tr>
 								<th scope="col">Nome</th>
-								<th scope="col">CPF/CNPJ</th>
-								<th scope="col">Telefone</th>
+								<th scope="col">Preco</th>
+								<th scope="col">Categoria</th>
+								<th scope="col">Valor</th>
 								<th scope="col">#</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${clientes}" var="cliente">
 								<tr>
-									<td>${cliente.pessoa.nome}</td>
-									<td>${cliente.cnpj}</td>
-									<td>${cliente.pessoa.telefone}</td>
 									<td>
 										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
 										<button class="btn btn-outline-danger btn-sm" onclick="location.href='/clienteFornecedor/excluir/${cliente.codigo}'"><i class="far fa-trash-alt"></i></button>
