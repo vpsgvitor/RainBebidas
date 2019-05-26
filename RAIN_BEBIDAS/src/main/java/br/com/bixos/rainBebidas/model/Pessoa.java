@@ -1,6 +1,6 @@
 package br.com.bixos.rainBebidas.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -33,7 +33,7 @@ public class Pessoa implements EntidadePersistente {
 
 	private String telefone;
 
-	private LocalDate dataNascimento;
+	private Date dataNascimento;
 
 	@Embedded
 	private Endereco endereco;

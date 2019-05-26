@@ -2,6 +2,7 @@ package br.com.bixos.rainBebidas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,11 +23,12 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView sigIn(Usuario user) {
+	public String sigIn(Usuario user, Model model) {
 		if (service.login(user)) {
-			return new ModelAndView("redirect:/dashboard");
+			return "redirect:/dashboard";
 		} else {
-			return new ModelAndView("redirect:/login");
+			model.addAttribute("retorno", "Email ou Senha incorretos");
+			return "login/index";
 		}
 	}
 

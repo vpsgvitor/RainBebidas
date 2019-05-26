@@ -2,7 +2,6 @@ package br.com.bixos.rainBebidas.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import br.com.bixos.rainBebidas.model.util.TipoMovimento;
@@ -45,6 +45,7 @@ public class Movimento implements EntidadePersistente {
 			@JoinColumn(name = "codproduto") })
 	private List<Produto> produtos;
 
-	@Column(name = "codclientefornecedor")
+	@OneToOne
+	@JoinColumn(name = "codClienteFornecedor")
 	private ClienteFornecedor clienteFornecedor;
 }

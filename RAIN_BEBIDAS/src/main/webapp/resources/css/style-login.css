@@ -18,14 +18,13 @@ body{
   width:400px;
   height:400px;
   position:absolute;
-  top:calc(50vh - 200px);
+  top:calc(50vh - 100px);
   left:calc(50vw - 200px);
   overflow:hidden;
 }
 .bgvid.inner{
-  top:calc(-50vh + 200px);
+  top:calc(-50vh + 100px);
   left:calc(-50vw + 200px);
-  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
   -webkit-filter:blur(10px);
   -ms-filter: blur(10px);
   -o-filter: blur(10px);
@@ -45,7 +44,10 @@ body{
   margin:30px 0;
   font-size:30px;
 }
-.box input{
+.alert{
+  text-align: center;
+}
+.alert, .box input{
   display:block;
   width:300px;
   margin:20px auto;
@@ -54,6 +56,21 @@ body{
   color:#fff;
   border:0;
 }
+.box input:focus,.box input:active,.box button:focus,.box button:active{
+  outline:none;
+}
+.box input::placeholder {
+    color: white;
+}
+
+.box input:-ms-input-placeholder {
+    color: white;
+}
+
+.box input::-ms-input-placeholder {
+    color: white;
+}
+
 .box input:focus,.box input:active,.box button:focus,.box button:active{
   outline:none;
 }

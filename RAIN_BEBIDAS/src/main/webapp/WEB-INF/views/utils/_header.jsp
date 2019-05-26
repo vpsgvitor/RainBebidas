@@ -33,9 +33,6 @@
 						<a class="nav-link" href="/clienteFornecedor">Clientes/Fornecedores</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/usuario">Usuarios</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="/logout">Logout</a>
 					</li>
 				</ul>

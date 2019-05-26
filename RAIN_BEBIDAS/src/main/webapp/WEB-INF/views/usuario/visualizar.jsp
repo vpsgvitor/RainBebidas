@@ -14,7 +14,7 @@
 							<tr>
 								<th scope="col">Nome</th>
 								<th scope="col">Email</th>
-								<th scope="col">#</th>
+								<th class="text-center">#</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -22,8 +22,7 @@
 								<tr>
 									<td>${usuario.nome}</td>
 									<td>${usuario.email}</td>
-									<td>
-										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
+									<td class="text-center">
 										<button class="btn btn-outline-danger btn-sm" onclick="location.href='/usuario/excluir/${usuario.codigo}'"><i class="far fa-trash-alt"></i></button>
 									</td>
 								</tr>

@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<img src="resources/img/errorPage.png" alt="Sem Internet">
+<img src="/resources/img/errorPage.png" alt="Sem Internet" class="error">
 
 </body>
 </html>

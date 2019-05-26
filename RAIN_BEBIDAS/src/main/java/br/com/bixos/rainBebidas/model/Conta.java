@@ -6,6 +6,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import br.com.bixos.rainBebidas.model.util.StatusConta;
@@ -36,5 +38,7 @@ public class Conta implements EntidadePersistente {
 	@Enumerated(EnumType.STRING)
 	private StatusConta situacao;
 
+	@OneToOne
+	@JoinColumn(name = "codClienteFornecedor")
 	private ClienteFornecedor clienteFornecedor;
 }

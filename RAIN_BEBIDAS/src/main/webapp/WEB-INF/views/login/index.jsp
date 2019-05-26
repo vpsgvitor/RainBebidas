@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +14,17 @@
 <body>
 
 	<div class="vid-container">
-		<img class="bgvid" src="https://images.unsplash.com/photo-1425321395722-b1dd54a97cf3?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" />
+		<img class="bgvid" src="resources/img/login-bk.jpg" />
 		<div class="inner-container">
-			<img class="bgvid inner" src="https://images.unsplash.com/photo-1425321395722-b1dd54a97cf3?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="/>
+			<img class="bgvid inner" src="resources/img/login-bk.jpg"/>
 			<div class="box">
 				<form action="/login" method="post">
 					<h1 class="title">Login</h1>
+					<c:if test="${retorno != null}" >
+						<span class="alert" style="color:red;">
+							${retorno}
+						</span>
+					</c:if>
 					<input type="text" name="email" placeholder="Email"/>
 					<input type="password" name="senha" placeholder="Senha"/>
 					<button type="submit">Entrar</button>

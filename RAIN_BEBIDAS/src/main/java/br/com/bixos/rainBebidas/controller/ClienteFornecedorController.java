@@ -4,11 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bixos.rainBebidas.model.ClienteFornecedor;
 import br.com.bixos.rainBebidas.service.ClienteFornecedorService;
@@ -32,17 +31,17 @@ public class ClienteFornecedorController {
 		return "clienteFornecedor/novo";
 	}
 
-	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
-	public ModelAndView salvar(@ModelAttribute("clienteFornecedor") ClienteFornecedor clienteFornecedor) {
+	@PostMapping("/salvar")
+	public String salvar(ClienteFornecedor clienteFornecedor) {
 		service.salvar(clienteFornecedor);
-		return new ModelAndView("redirect:/clienteFornecedor");
+		return "redirect:/clienteFornecedor";
 	}
 
 	@GetMapping("/excluir/{codigo}")
-	public ModelAndView excluir(@PathVariable(value = "codigo") Long codigo) {
+	public String excluir(@PathVariable(value = "codigo") Long codigo) {
 		service.excluir(codigo);
 
-		return new ModelAndView("redirect:/clienteFornecedor");
+		return "redirect:/clienteFornecedor";
 	}
 
 }

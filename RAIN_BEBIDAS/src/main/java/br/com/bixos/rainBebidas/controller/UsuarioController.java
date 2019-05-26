@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bixos.rainBebidas.model.Usuario;
 import br.com.bixos.rainBebidas.service.UsuarioService;
+import br.com.bixos.rainBebidas.utils.Logado;
 
 @Controller
 @RequestMapping("/usuario")
@@ -22,8 +23,10 @@ public class UsuarioController {
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String visualizar(Model model) {
 		model.addAttribute("usuarios", service.listar());
-
-		return "usuario/visualizar";
+		if (Logado.isLogado) {
+			return "usuario/visualizar";
+		}
+		return "/animal/nao/logado";
 	}
 
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
