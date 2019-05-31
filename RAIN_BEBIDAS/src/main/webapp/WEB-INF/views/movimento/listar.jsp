@@ -9,25 +9,27 @@
 			<div class="row justify-content-md-center">
 						
 				<div class="col-md-12 col-lg-9">
-					<button type="button" class="btn btn-primary mb-4" onclick="location.href='estoque/novo'">Novo</button>
+					<button type="button" class="btn btn-primary mb-4" onclick="location.href='/movimento/novo'">Novo</button>
 					
 					<table class="table table-bordered table-hover table-striped">
 						<thead>
 							<tr>
 								<th scope="col">Cliente Fornecedor</th>
 								<th scope="col">CPF/CNPJ</th>
-								<th scope="col">Produto</th>
-								<th scope="col">Quatidade</th>
-								<th scope="col">Tipo</th>
+								<th scope="col">Tipo Movimento</th>
+								<th scope="col">Valor</th>
 								<th scope="col">#</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${clientes}" var="cliente">
+							<c:forEach items="${movimentos}" var="movimento">
 								<tr>
+									<td>${movimento.clienteFornecedor.nome}</td>
+									<td>${not empty movimento.clienteFornecedor.cnpj ? movimento.clienteFornecedor.cnpj : movimento.clienteFornecedor.pessoa.cpf}</td>
+									<td>${movimento.tipoMovimento}</td>
+									<td>${movimento.valor}</td>
 									<td>
-										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
-										<button class="btn btn-outline-danger btn-sm" onclick="location.href='/clienteFornecedor/excluir/${cliente.codigo}'"><i class="far fa-trash-alt"></i></button>
+										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-eye"></i></button>
 									</td>
 								</tr>
 							</c:forEach>

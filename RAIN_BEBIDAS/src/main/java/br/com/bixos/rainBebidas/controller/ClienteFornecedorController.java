@@ -3,9 +3,10 @@ package br.com.bixos.rainBebidas.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,14 +28,23 @@ public class ClienteFornecedorController {
 	}
 
 	@GetMapping("/novo")
-	public String novo() {
+	public String novo(Model model) {
+		model.addAttribute("clienteFornecedor", new ClienteFornecedor());
 		return "clienteFornecedor/novo";
 	}
 
-	@PostMapping("/salvar")
-	public String salvar(ClienteFornecedor clienteFornecedor) {
+	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
+	public String salvar(@ModelAttribute("clienteFornecedor") ClienteFornecedor clienteFornecedor, ModelMap modelMap) {
 		service.salvar(clienteFornecedor);
 		return "redirect:/clienteFornecedor";
+	}
+
+	@GetMapping("/editar/{codigo}")
+	public String editar(@PathVariable(value = "codigo") Long codigo, Model model) {
+		ClienteFornecedor cliFor = service.findOne(codigo);
+		model.addAttribute("clienteFornecedor", cliFor);
+		return "clienteFornecedor/novo";
+
 	}
 
 	@GetMapping("/excluir/{codigo}")
