@@ -11,9 +11,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EstoqueDTO {
 
-	private Integer compras;
+	private Long compras;
 	private Double totalCompras;
-	private Integer vendas;
+	private Long vendas;
 	private Double totalVendas;
 
 }
