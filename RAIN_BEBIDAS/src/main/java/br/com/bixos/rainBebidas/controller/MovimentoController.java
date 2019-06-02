@@ -12,7 +12,7 @@ import br.com.bixos.rainBebidas.model.Movimento;
 import br.com.bixos.rainBebidas.service.MovimentoService;
 
 @Controller
-@RequestMapping("/movimentos")
+@RequestMapping("/movimento")
 public class MovimentoController {
 
 	@Autowired
@@ -30,6 +30,5 @@ public class MovimentoController {
 		model.addAttribute("movimento", new Movimento());
 		model.addAttribute("tipo", codigo > 1 ? "Venda" : "Compra");
 		return "movimento/novo";
-
 	}
 }
