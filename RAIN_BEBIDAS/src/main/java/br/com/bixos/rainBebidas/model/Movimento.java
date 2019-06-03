@@ -35,15 +35,13 @@ public class Movimento implements EntidadePersistente {
 
 	private Double valor;
 
-	private Double quantidade;
-
 	@Enumerated(EnumType.STRING)
 	private TipoMovimento tipoMovimento;
 
 	@ManyToMany
 	@JoinTable(name = "movimento_produto", joinColumns = { @JoinColumn(name = "codmovimento") }, inverseJoinColumns = {
-			@JoinColumn(name = "codproduto") })
-	private List<Produto> produtos;
+			@JoinColumn(name = "codprodutomovimento") })
+	private List<ProdutoMovimento> produtos;
 
 	@OneToOne
 	@JoinColumn(name = "codClienteFornecedor")

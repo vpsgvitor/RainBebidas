@@ -1,6 +1,5 @@
 package br.com.bixos.rainBebidas.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,23 +18,17 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClienteFornecedor implements EntidadePersistente {
+public class ProdutoMovimento implements EntidadePersistente {
 
-	private static final long serialVersionUID = -2034776108610193505L;
+	private static final long serialVersionUID = 733431854143304640L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "codpessoa")
-	private Pessoa pessoa = new Pessoa();
+	private Double quantidade;
 
-	private String cnpj;
-
-	@Override
-	public String toString() {
-		return "ClienteFornecedor [codigo=" + codigo + ", pessoa=" + pessoa + ", cnpj=" + cnpj + "]";
-	}
-
+	@OneToOne
+	@JoinColumn(name = "codProduto")
+	private Produto produto;
 }

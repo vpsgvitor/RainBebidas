@@ -17,8 +17,7 @@ public class EstoqueController {
 
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String visualizar(Model model) {
-		// model.addAttribute("produtos", service.listar());
-
+		model.addAttribute("infos", service.getInfo());
 		return "estoque/visualizar";
 	}
 }

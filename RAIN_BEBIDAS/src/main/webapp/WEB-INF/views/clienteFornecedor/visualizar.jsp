@@ -9,7 +9,7 @@
 			<div class="row justify-content-md-center">
 						
 				<div class="col-md-12 col-lg-9">
-					<button type="button" class="btn btn-primary mb-4" onclick="location.href='clienteFornecedor/novo'">Novo</button>
+					<button type="button" class="btn btn-primary mb-4" onclick="location.href='/clienteFornecedor/novo'">Novo</button>
 					
 					<table class="table table-bordered table-hover table-striped">
 						<thead>
@@ -24,10 +24,10 @@
 							<c:forEach items="${clientes}" var="cliente">
 								<tr>
 									<td>${cliente.pessoa.nome}</td>
-									<td>${cliente.cnpj}</td>
+									<td>${not empty cliente.cnpj ? cliente.cnpj : cliente.pessoa.cpf}</td>
 									<td>${cliente.pessoa.telefone}</td>
 									<td>
-										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
+										<button class="btn btn-outline-primary btn-sm" onclick="location.href='/clienteFornecedor/editar/${cliente.codigo}'"><i class="fas fa-pencil-alt"></i></button>
 										<button class="btn btn-outline-danger btn-sm" onclick="location.href='/clienteFornecedor/excluir/${cliente.codigo}'"><i class="far fa-trash-alt"></i></button>
 									</td>
 								</tr>
