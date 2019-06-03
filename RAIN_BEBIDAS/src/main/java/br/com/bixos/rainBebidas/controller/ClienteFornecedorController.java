@@ -1,9 +1,11 @@
 package br.com.bixos.rainBebidas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +33,9 @@ public class ClienteFornecedorController {
 		return "clienteFornecedor/novo";
 	}
 
-	@PostMapping("/salvar")
+	@PostMapping(value = "salvar", consumes = "application/json")
 	public String salvar(ClienteFornecedor clienteFornecedor) {
+		System.out.println(clienteFornecedor);
 		service.salvar(clienteFornecedor);
 		return "redirect:/clienteFornecedor";
 	}

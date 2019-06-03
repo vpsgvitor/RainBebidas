@@ -1,5 +1,3 @@
-
-	
 	<footer class="content-wrap">
 		<div class="footer">
 			<hr class="my-4">
@@ -17,8 +15,12 @@
 			</div>
 		</div>
 	</footer>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>
+	
+	<script src="../resources/js/auto-complete/jquery.easy-autocomplete.js"></script> 
+	
+	<script src="../resources/js/produto/novo.js"></script>
 	</body>
 </html>

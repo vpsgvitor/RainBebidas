@@ -7,6 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,5 +34,10 @@ public class ClienteFornecedor implements EntidadePersistente {
 	private Pessoa pessoa;
 
 	private String cnpj;
+
+	@Override
+	public String toString() {
+		return "ClienteFornecedor [codigo=" + codigo + ", pessoa=" + pessoa + ", cnpj=" + cnpj + "]";
+	}
 
 }
