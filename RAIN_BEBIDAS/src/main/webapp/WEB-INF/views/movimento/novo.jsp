@@ -16,6 +16,8 @@
 				<form:form modelAttribute="movimento" action="/movimento/salvar" method="post" cssClass="col">
 					<div class="form-group">
 						<form:hidden path="codigo" cssClass="form-control" id="codigo" value="${movimento.codigo}" />
+						<form:hidden path="clienteFornecedor.codigo" cssClass="form-control" id="clifor-codigo" value="${movimento.clienteFornecedor.codigo}" />
+						<form:input path="clienteFornecedor.pessoa.nome" cssClass="form-control" id="clifor-nome" value="" />
 					</div>
 					<div class="form-group">
 						 <select class="form-control" id="tipoMovimento" name="tipoMovimento">
@@ -54,15 +56,28 @@
 								</tr>
 							</thead>
 							<tbody>
+								<c:forEach items="${movimento.produtos}" var="produtoMovimento" varStatus="status">
 									<tr>
-										<td>Produto</td>
-										<td>9</td>
-										<td><fmt:formatNumber value="${valor}" type="currency"/></td>
+										<td>
+											<span id="nome-produto"></span>
+											<form:input path="produtos[${status.index}].codigo" cssClass="form-control" id="prod-codigo" value="${produtoMovimento.codigo}" />
+											<form:input path="produtos[${status.index}].produto.codigo" cssClass="form-control" id="prod-codigo" value="${produtoMovimento.produto.codigo}" />
+								        	<form:input path="produtos[${status.index}].produto.nome" cssClass="form-control" id="prod-nome" value="${produtoMovimento.produto.nome}" />
+										</td>
+										<td>
+											<span id="valor-produto"></span>
+								        	<form:input path="produtos[${status.index}].quantidade" cssClass="form-control" id="prod-quantidade" value="${produtoMovimento.quantidade}" />
+								        </td>
+										<td>
+<%-- 											<fmt:formatNumber value="${valor}" type="currency"/> --%>
+									        <form:input path="produtos[${status.index}].produto.valor" cssClass="form-control" id="prod-valor" value="${produtoMovimento.produto.valor}" />
+										</td>
 										<td>
 											<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
-											<button class="btn btn-outline-danger btn-sm" onclick="location.href='/movimento/excluir/item/${produto.codigo}'"><i class="far fa-trash-alt"></i></button>
+											<button class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></button>
 										</td>
 									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 						</div>

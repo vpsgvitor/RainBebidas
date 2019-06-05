@@ -28,7 +28,7 @@ public class Produto implements EntidadePersistente {
 
 	private String nome;
 
-	private Double preco;
+	private Double valor;
 
 	private Double quantidade;
 
