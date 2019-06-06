@@ -9,7 +9,7 @@
 			<div class="row justify-content-md-center">
 						
 				<div class="col-md-12 col-lg-9">
-					<button type="button" class="btn btn-primary mb-4" onclick="location.href='estoque/novo'">Novo</button>
+					<button type="button" class="btn btn-primary mb-4" onclick="location.href='/categorias/novo'">Novo</button>
 					
 					<table class="table table-bordered table-hover table-striped">
 						<thead>
@@ -19,11 +19,12 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${clientes}" var="cliente">
+							<c:forEach items="${categorias}" var="categoria">
 								<tr>
+									<td>${categoria.nome}</td>
 									<td>
-										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
-										<button class="btn btn-outline-danger btn-sm" onclick="location.href='/clienteFornecedor/excluir/${cliente.codigo}'"><i class="far fa-trash-alt"></i></button>
+										<button class="btn btn-outline-primary btn-sm" onclick="location.href='/categorias/editar/${categoria.codigo}'"><i class="fas fa-pencil-alt"></i></button>
+										<button class="btn btn-outline-danger btn-sm" onclick="location.href='/categorias/excluir/${categoria.codigo}'"><i class="far fa-trash-alt"></i></button>
 									</td>
 								</tr>
 							</c:forEach>

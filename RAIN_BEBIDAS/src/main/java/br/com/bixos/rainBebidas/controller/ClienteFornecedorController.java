@@ -44,7 +44,6 @@ public class ClienteFornecedorController {
 		ClienteFornecedor cliFor = service.findOne(codigo);
 		model.addAttribute("clienteFornecedor", cliFor);
 		return "clienteFornecedor/novo";
-
 	}
 
 	@GetMapping("/excluir/{codigo}")

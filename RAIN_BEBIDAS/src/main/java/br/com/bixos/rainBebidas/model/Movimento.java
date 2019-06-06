@@ -1,5 +1,6 @@
 package br.com.bixos.rainBebidas.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -41,7 +42,7 @@ public class Movimento implements EntidadePersistente {
 	@ManyToMany
 	@JoinTable(name = "movimento_produto", joinColumns = { @JoinColumn(name = "codmovimento") }, inverseJoinColumns = {
 			@JoinColumn(name = "codprodutomovimento") })
-	private List<ProdutoMovimento> produtos;
+	private List<ProdutoMovimento> produtos = new ArrayList<>();
 
 	@OneToOne
 	@JoinColumn(name = "codClienteFornecedor")

@@ -4,10 +4,12 @@
 	<div class="row justify-content-center titulo">
 		<h3 class="display-4">Produtos</h3>
 	</div>
+	<div class="row justify-content-center titulo">
+		<div class="col"><button type="button" class="btn btn-primary mb-4" onclick="location.href='produto/novo'">Novo</button></div>
+		<div class="col"><button type="button" class="btn btn-primary mb-4" onclick="location.href='/categorias'">Categorias de Produtos</button></div>
+	</div>
 	<div class="row justify-content-md-center">
 		<div class="col-md-12 col-lg-9">
-			<button type="button" class="btn btn-primary mb-4"
-				onclick="location.href='produto/novo'">Novo</button>
 			<table class="table table-bordered table-hover table-striped">
 				<thead>
 					<tr>

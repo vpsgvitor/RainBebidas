@@ -1,13 +1,12 @@
 package br.com.bixos.rainBebidas.controller;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,14 +33,14 @@ public class MovimentoController {
 		return "movimento/listar";
 	}
 
-	@GetMapping("/novo/{codigo}")
-	public String novo(@PathVariable(value = "codigo") Long codigo, Model model) {
-		model.addAttribute("movimento",
-				new Movimento(9l, 3.3, TipoMovimento.ENTRADA, Arrays.asList(
-						new ProdutoMovimento(6l, 1.3, new Produto(6l, "P", 3.6, 3.3, new TipoProduto(9l, "B")))),
-						new ClienteFornecedor()));
+	@GetMapping("/novo")
+	public String novo(Model model) {
+		ProdutoMovimento p = new ProdutoMovimento(1l, 2.2,
+				new Produto(1l, "Cerveja", 4.50, 5.0, new TipoProduto(1l, "Bebidas")));
 
-		model.addAttribute("tipo", codigo > 1 ? "Venda" : "Compra");
+		model.addAttribute("movimento", new Movimento(9l, 3.3, TipoMovimento.ENTRADA, new ArrayList<ProdutoMovimento>(),
+				new ClienteFornecedor()));
+
 		return "movimento/novo";
 	}
 

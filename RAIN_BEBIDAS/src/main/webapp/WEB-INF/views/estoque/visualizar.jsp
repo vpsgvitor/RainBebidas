@@ -22,7 +22,7 @@
 								<p class="card-text">Total&nbsp;<fmt:formatNumber value="${not empty infos.totalCompras ? infos.totalCompras : 0}" type="currency"/></p>
 							</div>
 							<div class="card-footer text-center">
-								<button type="button" class="btn btn-primary" onclick="location.href='/movimento/novo/1'">Nova compra</button>
+								<button type="button" class="btn btn-primary" onclick="location.href='/movimento/novo'">Nova compra</button>
 							</div>
 						</div>
 						<div class="card border-success m-4">
@@ -34,7 +34,7 @@
 								<p class="card-text">Total&nbsp;<fmt:formatNumber value="${not empty infos.totalVendas ? infos.totalVendas : 0}" type="currency"/></p>
 							</div>
 							<div class="card-footer text-center">
-								<button type="button" class="btn btn-success" onclick="location.href='/movimento/novo/2'">Nova venda</button>
+								<button type="button" class="btn btn-success" onclick="location.href='/movimento/novo'">Nova venda</button>
 							</div>
 						</div>
 					</div>

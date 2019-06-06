@@ -13,11 +13,11 @@
 		</div>
 		<div class="row justify-content-md-center">
 			<div class="col-md-12 col-lg-9">
-				<form:form modelAttribute="movimento" action="/movimento/salvar" method="post" cssClass="col">
+				<form:form action="/movimento/salvar" method="post" class="col" modelAttribute="movimento">
 					<div class="form-group">
-						<form:hidden path="codigo" cssClass="form-control" id="codigo" value="${movimento.codigo}" />
-						<form:hidden path="clienteFornecedor.codigo" cssClass="form-control" id="clifor-codigo" value="${movimento.clienteFornecedor.codigo}" />
-						<form:input path="clienteFornecedor.pessoa.nome" cssClass="form-control" id="clifor-nome" value="" />
+						<form:hidden path="codigo" name="codigo" class="form-control" id="codigo" value="${movimento.codigo}" />
+						<form:input path="clienteFornecedor.codigo" name="clienteFornecedor.codigo" class="form-control" id="clifor-codigo" value="${movimento.clienteFornecedor.codigo}" />
+						<input class="form-control" id="clifor-nome" value="" />
 					</div>
 					<div class="form-group">
 						 <select class="form-control" id="tipoMovimento" name="tipoMovimento">
@@ -60,17 +60,16 @@
 									<tr>
 										<td>
 											<span id="nome-produto"></span>
-											<form:input path="produtos[${status.index}].codigo" cssClass="form-control" id="prod-codigo" value="${produtoMovimento.codigo}" />
-											<form:input path="produtos[${status.index}].produto.codigo" cssClass="form-control" id="prod-codigo" value="${produtoMovimento.produto.codigo}" />
-								        	<form:input path="produtos[${status.index}].produto.nome" cssClass="form-control" id="prod-nome" value="${produtoMovimento.produto.nome}" />
+											<form:input path="produtos[${status.index}].codigo" name="produtos[${status.index}].codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.codigo}" />
+											<form:input path="produtos[${status.index}].produto.codigo" name="produtos[${status.index}].produto.codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.produto.codigo}" />
+								        	<form:input path="produtos[${status.index}].produto.nome" name="produtos[${status.index}].produto.nome" class="form-control" id="prod-nome" value="${produtoMovimento.produto.nome}" />
 										</td>
 										<td>
 											<span id="valor-produto"></span>
-								        	<form:input path="produtos[${status.index}].quantidade" cssClass="form-control" id="prod-quantidade" value="${produtoMovimento.quantidade}" />
+								        	<form:input path="produtos[${status.index}].quantidade" name="produtos[${status.index}].quantidade" class="form-control" id="prod-quantidade" value="${produtoMovimento.quantidade}" />
 								        </td>
 										<td>
-<%-- 											<fmt:formatNumber value="${valor}" type="currency"/> --%>
-									        <form:input path="produtos[${status.index}].produto.valor" cssClass="form-control" id="prod-valor" value="${produtoMovimento.produto.valor}" />
+									        <form:input path="produtos[${status.index}].produto.valor" name="produtos[${status.index}].produto.valor" class="form-control" id="prod-valor" value="${produtoMovimento.produto.valor}" />
 										</td>
 										<td>
 											<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
@@ -82,7 +81,7 @@
 						</table>
 						</div>
 					</fieldset>
-					
+<%-- 											<fmt:formatNumber value="${valor}" type="currency"/> --%>
 					<button type="submit" class="btn btn-success float-right">Salvar</button>
 				
 				</form:form>
