@@ -14,21 +14,22 @@
 				<thead>
 					<tr>
 						<th scope="col">Nome</th>
-						<th scope="col">Preco</th>
 						<th scope="col">Categoria</th>
 						<th scope="col">Valor</th>
 						<th scope="col">#</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${clientes}" var="cliente">
+					<c:forEach items="${produtos}" var="produto">
 						<tr>
+							<td>${produto.nome}</td>
+							<td>${produto.tipoProduto.nome}</td>
+							<td>${produto.valor}</td>
 							<td>
-								<button class="btn btn-outline-primary btn-sm">
+								<button class="btn btn-outline-primary btn-sm" onclick="location.href='/produto/editar/${produto.codigo}'">
 									<i class="fas fa-pencil-alt"></i>
 								</button>
-								<button class="btn btn-outline-danger btn-sm"
-									onclick="location.href='/clienteFornecedor/excluir/${cliente.codigo}'">
+								<button class="btn btn-outline-danger btn-sm" onclick="location.href='/produto/excluir/${produto.codigo}'">
 									<i class="far fa-trash-alt"></i>
 								</button>
 							</td>

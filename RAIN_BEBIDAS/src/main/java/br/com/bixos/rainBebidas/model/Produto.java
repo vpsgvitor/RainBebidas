@@ -34,6 +34,6 @@ public class Produto implements EntidadePersistente {
 
 	@OneToOne
 	@JoinColumn(name = "codTipoProduto")
-	private TipoProduto tipoProduto;
+	private TipoProduto tipoProduto = new TipoProduto();
 
 }

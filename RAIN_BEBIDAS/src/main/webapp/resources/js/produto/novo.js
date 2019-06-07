@@ -1,34 +1,8 @@
-//var options = {
-//	data : '${pageContext.request.contextPath }/categorias/getList',
-//
-//	getValue : "nome",
-//
-//	list : {
-//
-//		onSelectItemEvent : function() {
-//			var value = $("#ACTipoProduto").getSelectedItemData().codigo;
-//
-//			$("#IdTipoProduto").val(value).trigger("change");
-//		}
-//	}
-//};
-//
-//$("#ACTipoProduto").easyAutocomplete(options);
-//
-////
-////$.ajax({
-////    type: "GET",
-////    dataType: "json",
-////    url: "http://localhost:6060/categorias/ACTipoProduto", 
-////    success: function(data) {
-////    	 return data["responseText"];
-////    }
-////});
 
 var options = {
 
   url: function(phrase) {
-    return 'http://localhost:6060/categorias/getList';
+    return 'http://localhost:6060/categorias/getListTipoProduto';
   },
 
   getValue: function(element) {

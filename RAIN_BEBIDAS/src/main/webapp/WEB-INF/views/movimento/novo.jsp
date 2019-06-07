@@ -16,8 +16,9 @@
 				<form:form action="/movimento/salvar" method="post" class="col" modelAttribute="movimento">
 					<div class="form-group">
 						<form:hidden path="codigo" name="codigo" class="form-control" id="codigo" value="${movimento.codigo}" />
-						<form:input path="clienteFornecedor.codigo" name="clienteFornecedor.codigo" class="form-control" id="clifor-codigo" value="${movimento.clienteFornecedor.codigo}" />
-						<input class="form-control" id="clifor-nome" value="" />
+						<form:hidden path="clienteFornecedor.codigo" name="clienteFornecedor.codigo" class="form-control" id="idCliente" value="${movimento.clienteFornecedor.codigo}" />
+						<input type="text" class="form-control" placeholder="Cliente/Fornecedor" id="ACCliente" aria-label="Cliente" aria-describedby="basic-addon3">
+							  
 					</div>
 					<div class="form-group">
 						 <select class="form-control" id="tipoMovimento" name="tipoMovimento">
@@ -30,7 +31,8 @@
 						<legend class="col-form-label">Produtos</legend>
 						<div class="row mb-2">
 							<div class="input-group col">
-							  <input type="text" class="form-control" placeholder="Produto" aria-label="Produto" aria-describedby="basic-addon2">
+							  <input type="hidden" id="IdProduto">
+							  <input type="text" class="form-control" placeholder="Produto" id="ACProduto" aria-label="Produto" aria-describedby="basic-addon2">
 							  <div class="input-group-append">
 							    <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i></button>
 							  </div>
@@ -39,10 +41,10 @@
 						  
 					   <div class="row mb-3">
 						    <div class="col">
-						      <input type="number" class="form-control" placeholder="Quantidade">
+						      <input type="number" class="form-control" placeholder="Quantidade"  id="prod-qnt">
 						    </div>
 						    <div class="col">
-						      <input type="text" class="form-control" placeholder="Valor">
+						      <input type="text" class="form-control" placeholder="Valor" id="valor-prod">
 						    </div>
 						  </div>
 						<div class="form-group">
@@ -60,8 +62,8 @@
 									<tr>
 										<td>
 											<span id="nome-produto"></span>
-											<form:input path="produtos[${status.index}].codigo" name="produtos[${status.index}].codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.codigo}" />
-											<form:input path="produtos[${status.index}].produto.codigo" name="produtos[${status.index}].produto.codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.produto.codigo}" />
+											<form:hidden path="produtos[${status.index}].codigo" name="produtos[${status.index}].codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.codigo}" />
+											<form:hidden path="produtos[${status.index}].produto.codigo" name="produtos[${status.index}].produto.codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.produto.codigo}" />
 								        	<form:input path="produtos[${status.index}].produto.nome" name="produtos[${status.index}].produto.nome" class="form-control" id="prod-nome" value="${produtoMovimento.produto.nome}" />
 										</td>
 										<td>

@@ -7,23 +7,24 @@
 	</div>
 	<div class="row justify-content-md-center">
 		<div class="col-md-12 col-lg-9">
-			<form action="salvar" method="POST" class="col">
+			<form action="/produto/salvar" method="POST" class="col">
 
 				<div class="form-group">
-					<input type="text" class="form-control" name="produto.nome" placeholder="Nome" value="${produto.nome}">
+					<input type="hidden" class="form-control" name="codigo" value="${produto.codigo}">
+					<input type="text" class="form-control" name="nome" placeholder="Nome" value="${produto.nome}">
 				</div>
 
 				<div class="form-group">
-					<input type="hidden" name="tipoProduto.id" id="IdTipoProduto" value="${produto.tipoProduto.id}"> 
+					<input type="hidden" name="tipoProduto.codigo" id="IdTipoProduto" value="${produto.tipoProduto.codigo}"> 
 					<input type="text" class="form-control" id="ACTipoProduto" name="tipoProduto.nome" placeholder="Categoria" value="${produto.tipoProduto.nome}">
 				</div>
 
 				<div class="form-group">
-					<input class="form-control" name="produto.valor" placeholder="Valor" value="${produto.valor}">
+					<input class="form-control" name="valor" placeholder="Valor" value="${produto.valor}">
 				</div>
 
 				<div class="form-group">
-					<input type="number" class="form-control" name="produto.quantidade" placeholder="Quantidade" value="${produto.quantidade}">
+					<input type="number" class="form-control" name="quantidade" placeholder="Quantidade" value="${produto.quantidade}">
 				</div>
 
 				<button type="submit" class="btn btn-success float-right">Salvar</button>
