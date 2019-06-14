@@ -1,6 +1,7 @@
 package br.com.bixos.rainBebidas.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,8 +39,11 @@ public class MovimentoController {
 		ProdutoMovimento p = new ProdutoMovimento(1l, 2.2,
 				new Produto(1l, "Cerveja", 4.50, 5.0, new TipoProduto(1l, "Bebidas")));
 
-		model.addAttribute("movimento", new Movimento(9l, 3.3, TipoMovimento.ENTRADA, new ArrayList<ProdutoMovimento>(),
-				new ClienteFornecedor()));
+		List<ProdutoMovimento> lista = new ArrayList<>();
+
+		lista.add(p);
+
+		model.addAttribute("movimento", new Movimento(9l, 3.3, TipoMovimento.ENTRADA, lista, new ClienteFornecedor()));
 
 		return "movimento/novo";
 	}

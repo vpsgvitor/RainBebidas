@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.bixos.rainBebidas.model.Movimento;
 import br.com.bixos.rainBebidas.repository.MovimentoRepository;
+import br.com.bixos.rainBebidas.service.ContaService;
 import br.com.bixos.rainBebidas.service.MovimentoService;
 
 @Service
@@ -14,6 +15,7 @@ public class MovimentoServiceImpl implements MovimentoService {
 
 	@Autowired
 	private MovimentoRepository repository;
+	private ContaService contaService;
 
 	@Override
 	public void salvar(Movimento object) {

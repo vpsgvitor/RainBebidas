@@ -34,7 +34,7 @@
 							  <input type="hidden" id="IdProduto">
 							  <input type="text" class="form-control" placeholder="Produto" id="ACProduto" aria-label="Produto" aria-describedby="basic-addon2">
 							  <div class="input-group-append">
-							    <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i></button>
+							    <button class="btn btn-outline-success" type="button"><i class="fas fa-plus" id="addProduct"></i></button>
 							  </div>
 						  </div>
 						</div>
@@ -53,29 +53,30 @@
 								<tr>
 									<th scope="col">Nome</th>
 									<th scope="col">Quantidade</th>
-									<th scope="col">Valor</th>
+									<th scope="col">Valor unitario</th>
+									<th scope="col">Valor total</th>
 									<th scope="col">#</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="corpo-tabela">
 								<c:forEach items="${movimento.produtos}" var="produtoMovimento" varStatus="status">
 									<tr>
 										<td>
-											<span id="nome-produto"></span>
 											<form:hidden path="produtos[${status.index}].codigo" name="produtos[${status.index}].codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.codigo}" />
 											<form:hidden path="produtos[${status.index}].produto.codigo" name="produtos[${status.index}].produto.codigo" class="form-control" id="prod-codigo" value="${produtoMovimento.produto.codigo}" />
-								        	<form:input path="produtos[${status.index}].produto.nome" name="produtos[${status.index}].produto.nome" class="form-control" id="prod-nome" value="${produtoMovimento.produto.nome}" />
+								        	<form:input path="produtos[${status.index}].produto.nome" name="produtos[${status.index}].produto.nome" class="form-control disabled" id="prod-nome" value="${produtoMovimento.produto.nome}" />
 										</td>
 										<td>
-											<span id="valor-produto"></span>
 								        	<form:input path="produtos[${status.index}].quantidade" name="produtos[${status.index}].quantidade" class="form-control" id="prod-quantidade" value="${produtoMovimento.quantidade}" />
 								        </td>
 										<td>
 									        <form:input path="produtos[${status.index}].produto.valor" name="produtos[${status.index}].produto.valor" class="form-control" id="prod-valor" value="${produtoMovimento.produto.valor}" />
 										</td>
 										<td>
-											<button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
-											<button class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+											<fmt:formatNumber value="" type="currency"/>
+										</td>
+										<td>
+											<button class="btn btn-outline-danger btn-sm excluir-prod" type="button"><i class="far fa-trash-alt"></i></button>
 										</td>
 									</tr>
 								</c:forEach>
