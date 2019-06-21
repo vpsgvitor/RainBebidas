@@ -50,6 +50,7 @@ public class MovimentoController {
 
 	@PostMapping("/salvar")
 	public String salvar(@ModelAttribute(value = "movimento") Movimento movimento, Model model) {
+		System.out.println(movimento.getProdutos());
 		service.salvar(movimento);
 		return "redirect:/movimento/listar";
 	}

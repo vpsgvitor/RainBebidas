@@ -13,7 +13,7 @@
 		</div>
 		<div class="row justify-content-md-center">
 			<div class="col-md-12 col-lg-9">
-				<form:form action="/movimento/salvar" method="post" class="col" modelAttribute="movimento">
+				<form:form action="/movimento/salvar" method="post" class="col" modelAttribute="movimento" id="form-prod">
 					<div class="form-group">
 						<form:hidden path="codigo" name="codigo" class="form-control" id="codigo" value="${movimento.codigo}" />
 						<form:hidden path="clienteFornecedor.codigo" name="clienteFornecedor.codigo" class="form-control" id="idCliente" value="${movimento.clienteFornecedor.codigo}" />
@@ -85,7 +85,7 @@
 						</div>
 					</fieldset>
 <%-- 											<fmt:formatNumber value="${valor}" type="currency"/> --%>
-					<button type="submit" class="btn btn-success float-right">Salvar</button>
+					<button type="button" class="btn btn-success float-right" id="button-submit">Salvar</button>
 				
 				</form:form>
 			</div>
