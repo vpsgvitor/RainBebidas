@@ -11,8 +11,6 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 		<link rel="stylesheet" href="../resources/js/auto-complete/easy-autocomplete.min.css"> 
-		
-		
 	</head>
 	
 	<body class="page-container">

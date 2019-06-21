@@ -4,7 +4,44 @@
 <fmt:setLocale value = "pt_BR"/>
 
 	<c:import url="../utils/_header.jsp"></c:import>
-
+	<script type="text/javascript">
+		function addProd() {
+			var codProduto = $('#IdProduto').val();
+			var nomeProduto = $('#ACProduto').val();
+			var valProd = $('#valor-prod').val();
+			var prodQnt = $('#prod-qnt').val();
+			var valorTotal = valProd * prodQnt;  
+			const $body = $('#corpo-tabela');
+			var $lastN = $('#corpo-tabela tr').length;
+			var nextN = $lastN > 0 ? $lastN + 1 : 0;
+			
+			var partial =  `<tr><td>
+				<input id="prod-codigo" name="produtos[` + nextN + `].produto.codigo" class="form-control" value="` + codProduto + `" type="hidden">
+				<input id="prod-nome" name="produtos[` + nextN + `].produto.nome" class="form-control disabled" value="` + nomeProduto + `" type="text">
+			</td>
+			<td><input id="prod-quantidade" name="produtos[` + nextN + `].quantidade" class="form-control" value="` + prodQnt + `" type="text"></td>
+			<td><input id="prod-valor" name="produtos[` + nextN + `].produto.valor" class="form-control" value="` + valProd + `" type="text"></td>
+			<td>` + valorTotal + `</td>
+			<td>
+				<button class="btn btn-outline-danger btn-sm  excluir-prod" type="button" onclick="excluirProd();"><i class="far fa-trash-alt"></i></button>
+			</td>
+			</tr>`;	
+			
+			$body.append(partial);
+			zeraTudo();
+		};
+		
+		function excluirProd() {
+			$('#corpo-tabela .excluir-prod').parents("tr").remove();
+		};
+		
+		function zeraTudo(){
+			$('#IdProduto').val("");
+			$('#ACProduto').val("");
+			$('#valor-prod').val("");
+			$('#prod-qnt').val("");
+		}
+	</script>
 	<div class="container">
 		<div class="row justify-content-center titulo">
 		
@@ -34,7 +71,7 @@
 							  <input type="hidden" id="IdProduto">
 							  <input type="text" class="form-control" placeholder="Produto" id="ACProduto" aria-label="Produto" aria-describedby="basic-addon2">
 							  <div class="input-group-append">
-							    <button class="btn btn-outline-success" type="button"><i class="fas fa-plus" id="addProduct"></i></button>
+							    <button class="btn btn-outline-success" type="button" onclick="addProd();"><i class="fas fa-plus" id="addProduct"></i></button>
 							  </div>
 						  </div>
 						</div>
@@ -76,7 +113,7 @@
 											<fmt:formatNumber value="" type="currency"/>
 										</td>
 										<td>
-											<button class="btn btn-outline-danger btn-sm excluir-prod" type="button"><i class="far fa-trash-alt"></i></button>
+											<button class="btn btn-outline-danger btn-sm excluir-prod" type="button" onclick="excluirProd();"><i class="far fa-trash-alt"></i></button>
 										</td>
 									</tr>
 								</c:forEach>
