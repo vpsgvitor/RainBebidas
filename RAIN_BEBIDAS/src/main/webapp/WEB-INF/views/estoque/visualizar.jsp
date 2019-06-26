@@ -18,8 +18,8 @@
 							<hr class="my-2"/>
 							<div class="card-body text-center">
 								<h5 class="card-title">Compras</h5>
-								<p class="card-text">${not empty infos.compras ? infos.compras : 0} neste mes</p>
-								<p class="card-text">Total&nbsp;<fmt:formatNumber value="${not empty infos.totalCompras ? infos.totalCompras : 0}" type="currency"/></p>
+								<p class="card-text">${not empty infos.getCompras() ? infos.getCompras() : 0} neste mes</p>
+								<p class="card-text">Total&nbsp;<fmt:formatNumber value="${not empty infos.getTotalCompras() ? infos.getTotalCompras() : 0}" type="currency"/></p>
 							</div>
 							<div class="card-footer text-center">
 								<button type="button" class="btn btn-primary" onclick="location.href='/movimento/novo'">Nova compra</button>

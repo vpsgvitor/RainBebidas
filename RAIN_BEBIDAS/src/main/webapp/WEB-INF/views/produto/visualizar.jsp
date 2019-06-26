@@ -16,6 +16,7 @@
 						<th scope="col">Nome</th>
 						<th scope="col">Categoria</th>
 						<th scope="col">Valor</th>
+						<th scope="col">Quantidade</th>
 						<th scope="col">#</th>
 					</tr>
 				</thead>
@@ -25,6 +26,7 @@
 							<td>${produto.nome}</td>
 							<td>${produto.tipoProduto.nome}</td>
 							<td>${produto.valor}</td>
+							<td>${produto.quantidade}</td>
 							<td>
 								<button class="btn btn-outline-primary btn-sm" onclick="location.href='/produto/editar/${produto.codigo}'">
 									<i class="fas fa-pencil-alt"></i>

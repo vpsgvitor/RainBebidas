@@ -25,6 +25,9 @@
 						<a class="nav-link" href="/estoque">Estoque</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/movimento">Movimentos</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/produto">Produtos</a>
 					</li>
 					<li class="nav-item">

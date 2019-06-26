@@ -26,6 +26,6 @@ public class EstoqueServiceImpl implements EstoqueService {
 
 	@Override
 	public EstoqueDTO getInfo() {
-		return repository.findInfoEstoque();
+		return !repository.findInfoEstoque().isEmpty() ? repository.findInfoEstoque().get(0) : null;
 	}
 }

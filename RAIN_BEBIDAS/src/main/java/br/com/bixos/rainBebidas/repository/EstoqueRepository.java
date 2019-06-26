@@ -1,5 +1,7 @@
 package br.com.bixos.rainBebidas.repository;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,14 +13,13 @@ import br.com.bixos.rainBebidas.model.EstoqueDTO;
 @Resource
 public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
 
-	//@formatter:off
-	@Query("select new br.com.bixos.rainBebidas.model.EstoqueDTO("
-			+ "(select count(mov.valor) from Movimento mov where tipo_movimento = 'COMPRA'),"
-			+ "(select sum(mov.valor) from Movimento mov where tipo_movimento = 'COMPRA'),"
-			+ "(select count(mov.valor) from Movimento mov where tipo_movimento = 'VENDA'),"
-			+ "(select sum(mov.valor) from Movimento mov where tipo_movimento = 'VENDA')) "
-			+ "from Movimento mov")
-	//@formatter:on
-	EstoqueDTO findInfoEstoque();
+	// @formatter:off
+	@Query("select (select count(mov) from Movimento mov where tipo_movimento = 'ENTRADA') as contas, "
+			+ "(select sum(mov.valor) from Movimento mov where tipo_movimento = 'ENTRADA') as totalContas, "
+			+ "(select count(mov) from Movimento mov where tipo_movimento = 'SAIDA') as vendas, "
+			+ "(select sum(mov.valor) from Movimento mov where tipo_movimento = 'SAIDA') as totalVendas "
+			+ "from Movimento mov ")
+	// @formatter:on
+	List<EstoqueDTO> findInfoEstoque();
 
 }

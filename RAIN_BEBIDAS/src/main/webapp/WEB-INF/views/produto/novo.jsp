@@ -20,11 +20,7 @@
 				</div>
 
 				<div class="form-group">
-					<input class="form-control" name="valor" placeholder="Valor" value="${produto.valor}">
-				</div>
-
-				<div class="form-group">
-					<input type="number" class="form-control" name="quantidade" placeholder="Quantidade" value="${produto.quantidade}">
+					<input class="form-control money" name="valor" placeholder="Valor" value="${produto.valor}">
 				</div>
 
 				<button type="submit" class="btn btn-success float-right">Salvar</button>

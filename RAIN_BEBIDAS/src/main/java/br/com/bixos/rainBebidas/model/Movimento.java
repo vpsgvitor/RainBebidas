@@ -1,18 +1,22 @@
 package br.com.bixos.rainBebidas.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import br.com.bixos.rainBebidas.model.util.TipoMovimento;
@@ -36,15 +40,19 @@ public class Movimento implements EntidadePersistente {
 
 	private Double valor;
 
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate data;
+
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataVencimento;
+
 	@Enumerated(EnumType.STRING)
 	private TipoMovimento tipoMovimento;
 
-	@ManyToMany
-	@JoinTable(name = "movimento_produto", joinColumns = { @JoinColumn(name = "codmovimento") }, inverseJoinColumns = {
-			@JoinColumn(name = "codprodutomovimento") })
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "movimento")
 	private List<ProdutoMovimento> produtos = new ArrayList<>();
 
 	@OneToOne
 	@JoinColumn(name = "codClienteFornecedor")
-	private ClienteFornecedor clienteFornecedor;
+	private ClienteFornecedor clienteFornecedor = new ClienteFornecedor();
 }

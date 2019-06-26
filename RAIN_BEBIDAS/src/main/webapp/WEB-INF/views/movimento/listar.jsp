@@ -1,4 +1,5 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 	<c:import url="../utils/_header.jsp"></c:import>
 		<div class="container">
 			<div class="row justify-content-center titulo">
@@ -14,6 +15,7 @@
 					<table class="table table-bordered table-hover table-striped">
 						<thead>
 							<tr>
+								<th scope="col">Data movimento</th>
 								<th scope="col">Cliente Fornecedor</th>
 								<th scope="col">CPF/CNPJ</th>
 								<th scope="col">Tipo Movimento</th>
@@ -24,12 +26,14 @@
 						<tbody>
 							<c:forEach items="${movimentos}" var="movimento">
 								<tr>
-									<td>${movimento.clienteFornecedor.nome}</td>
+									<td><fmt:parseDate  value="${movimento.data}" type="date" pattern="yyyy-MM-dd" var="parsed" />
+										<fmt:formatDate value="${parsed}" type="date" pattern="dd/MM/yyyy"/></td>
+									<td>${movimento.clienteFornecedor.pessoa.nome}</td>
 									<td>${not empty movimento.clienteFornecedor.cnpj ? movimento.clienteFornecedor.cnpj : movimento.clienteFornecedor.pessoa.cpf}</td>
 									<td>${movimento.tipoMovimento}</td>
 									<td>${movimento.valor}</td>
 									<td>
-										<button class="btn btn-outline-primary btn-sm"><i class="fas fa-eye"></i></button>
+										<button class="btn btn-outline-primary btn-sm" onclick="location.href='/movimento/visualizar/${movimento.codigo}'"><i class="fas fa-eye"></i></button>
 									</td>
 								</tr>
 							</c:forEach>
