@@ -11,23 +11,19 @@
 
 				<div class="form-group">
 					<input type="hidden" class="form-control" name="codigo" value="${produto.codigo}">
-					<input type="text" class="form-control" name="nome" placeholder="Nome" value="${produto.nome}">
+					<input type="text" class="form-control" required="true" name="nome" placeholder="Nome" value="${produto.nome}">
 				</div>
 
 				<div class="form-group">
 					<input type="hidden" name="tipoProduto.codigo" id="IdTipoProduto" value="${produto.tipoProduto.codigo}"> 
-					<input type="text" class="form-control" id="ACTipoProduto" name="tipoProduto.nome" placeholder="Categoria" value="${produto.tipoProduto.nome}">
+					<input type="text" class="form-control" id="ACTipoProduto" name="tipoProduto.nome" required="true" placeholder="Categoria" value="${produto.tipoProduto.nome}">
 				</div>
 
 				<div class="form-group">
-					<input class="form-control" name="valor" placeholder="Valor" value="${produto.valor}">
+					<input class="form-control money" name="valor" placeholder="Valor" required="true" value="${produto.valor}">
 				</div>
 
-				<div class="form-group">
-					<input type="number" class="form-control" name="quantidade" placeholder="Quantidade" value="${produto.quantidade}">
-				</div>
-
-				<button type="submit" class="btn btn-success float-right">Salvar</button>
+				<button type="submit" class="btn btn-dark float-right">Salvar</button>
 			</form>
 		</div>
 	</div>

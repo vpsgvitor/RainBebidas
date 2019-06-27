@@ -1,5 +1,7 @@
 package br.com.bixos.rainBebidas.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -8,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.bixos.rainBebidas.model.util.EntidadePersistente;
 import br.com.bixos.rainBebidas.model.util.StatusConta;
@@ -31,6 +35,15 @@ public class Conta implements EntidadePersistente {
 	private Long codigo;
 
 	private Double valor;
+
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataLancamento;
+
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataVencimento;
+
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataBaixa;
 
 	@Enumerated(EnumType.STRING)
 	private TipoConta tipoConta;

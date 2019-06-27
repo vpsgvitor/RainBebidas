@@ -9,9 +9,9 @@
 			<div class="row justify-content-md-center">
 						
 				<div class="col-md-12 col-lg-9">
-					<button type="button" class="btn btn-primary mb-4" onclick="location.href='/categorias/novo'">Novo</button>
-					
-					<table class="table table-bordered table-hover table-striped">
+					<button type="button" class="btn btn-dark mb-4" onclick="location.href='/categorias/novo'">Novo</button>
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-striped table-dark">
 						<thead>
 							<tr>
 								<th scope="col">Nome</th>
@@ -30,6 +30,8 @@
 							</c:forEach>
 						</tbody>
 					</table>
+					</div>
+					
 				</div>
 			</div>
 		</div>

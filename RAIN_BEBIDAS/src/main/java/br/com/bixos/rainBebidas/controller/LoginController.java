@@ -25,7 +25,7 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String sigIn(Usuario user, Model model) {
 		if (service.login(user)) {
-			return "redirect:/dashboard";
+			return "redirect:/estoque";
 		} else {
 			model.addAttribute("retorno", "Email ou Senha incorretos");
 			return "login/index";

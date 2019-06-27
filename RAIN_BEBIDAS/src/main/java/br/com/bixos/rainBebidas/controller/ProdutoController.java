@@ -51,8 +51,20 @@ public class ProdutoController {
 
 	@GetMapping("/excluir/{codigo}")
 	public String excluir(@PathVariable(value = "codigo") Long codigo, Model model) {
-		service.excluir(codigo);
-		return "redirect:/produto";
+		Produto prod = service.findOne(codigo);
+
+		if (prod.getQuantidade() > 0) {
+			model.addAttribute("error", "Não é possível excluir produto com quantidade no estoque");
+		} else if (service.existeMovimento(prod.getCodigo())) {
+			model.addAttribute("error", "Não é possível excluir produto ligado à um movimento");
+		} else {
+			service.excluir(codigo);
+			return "redirect:/produto";
+		}
+
+		model.addAttribute("produtos", service.listar());
+		return "produto/visualizar";
+
 	}
 
 	@Transactional

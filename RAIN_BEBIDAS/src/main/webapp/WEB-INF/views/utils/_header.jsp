@@ -14,7 +14,7 @@
 	</head>
 	
 	<body class="page-container">
-		<nav class="navbar navbar-expand-md navbar-light bg-light">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			<a class="navbar-brand" href="/dashboard">Rain Bebidas</a>
 			 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuSuperior" aria-controls="menuSuperior" aria-expanded="false" aria-label="Toggle navigation">
 			 	<span class="navbar-toggler-icon"></span>
@@ -23,6 +23,9 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 						<a class="nav-link" href="/estoque">Estoque</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/movimento">Movimentos</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/produto">Produtos</a>

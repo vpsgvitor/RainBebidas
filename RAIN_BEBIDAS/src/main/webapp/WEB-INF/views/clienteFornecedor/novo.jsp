@@ -13,7 +13,7 @@
 				<form:form modelAttribute="clienteFornecedor" action="/clienteFornecedor/salvar" method="post" cssClass="col">
 					<div class="form-group">
 						<form:hidden path="codigo" cssClass="form-control" id="codigo" value="${clienteFornecedor.codigo}" />
-						<form:input path="pessoa.nome" type="text" cssClass="form-control" id="nome" placeholder="Nome" value="${clienteFornecedor.pessoa.nome}" />
+						<form:input path="pessoa.nome" required="true" type="text" cssClass="form-control" id="nome" placeholder="Nome" value="${clienteFornecedor.pessoa.nome}" />
 					</div>
 					<div class="form-group">
 						<form:input path="pessoa.cpf" type="text" cssClass="form-control" id="cpf" placeholder="CPF" value="${clienteFornecedor.pessoa.cpf}" />
@@ -22,7 +22,7 @@
 						<form:input path="cnpj" type="text" cssClass="form-control" id="cnpj" placeholder="CNPJ" value="${clienteFornecedor.cnpj}" />
 					</div>
 					<div class="form-group">
-						<form:input path="pessoa.telefone" type="text" cssClass="form-control" id="telefone" placeholder="Telefone" value="${clienteFornecedor.pessoa.telefone}" />
+						<form:input path="pessoa.telefone" required="true" type="text" cssClass="form-control" id="telefone" placeholder="Telefone" value="${clienteFornecedor.pessoa.telefone}" />
 					</div>
 					
 					<fieldset>
@@ -47,7 +47,7 @@
 						</div>
 					</fieldset>
 					
-					<button type="submit" class="btn btn-success float-right">Salvar</button>
+					<button type="submit" class="btn btn-dark float-right">Salvar</button>
 				
 				</form:form>
 			</div>

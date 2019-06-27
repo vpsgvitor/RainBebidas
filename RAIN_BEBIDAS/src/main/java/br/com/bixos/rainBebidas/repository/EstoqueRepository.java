@@ -7,18 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 
 import br.com.bixos.rainBebidas.model.Estoque;
 import br.com.bixos.rainBebidas.model.EstoqueDTO;
+import br.com.bixos.rainBebidas.model.util.TipoMovimento;
 
 @Resource
 public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
 
-	//@formatter:off
-	@Query("select new br.com.bixos.rainBebidas.model.EstoqueDTO("
-			+ "(select count(mov.valor) from Movimento mov where tipo_movimento = 'COMPRA'),"
-			+ "(select sum(mov.valor) from Movimento mov where tipo_movimento = 'COMPRA'),"
-			+ "(select count(mov.valor) from Movimento mov where tipo_movimento = 'VENDA'),"
-			+ "(select sum(mov.valor) from Movimento mov where tipo_movimento = 'VENDA')) "
-			+ "from Movimento mov")
-	//@formatter:on
-	EstoqueDTO findInfoEstoque();
+	@Query("select count(mov) as quantidade, sum(mov.valor) as somatorio from Movimento mov where mov.tipoMovimento = ?1")
+	EstoqueDTO findParaEstoque(TipoMovimento tipoMovimento);
 
 }

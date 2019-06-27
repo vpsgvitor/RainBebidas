@@ -1,3 +1,8 @@
+$(document).ready(function(){
+	$('.date').mask('00/00/0000');
+	$('.money').mask('000000000000000.00', {reverse: true});
+});
+
 var options = {
 
 	url : function(phrase) {

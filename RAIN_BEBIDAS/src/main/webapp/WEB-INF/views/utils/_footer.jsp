@@ -21,8 +21,8 @@
 	
 	<script src="../resources/js/auto-complete/jquery.easy-autocomplete.js"></script> 
 	<script src="../resources/js/estoque/estoque.js"></script>
-	<script src="../resources/js/movimento/movimento.js"></script>
 	<script src="../resources/js/estoque/clienteFornecedor.js"></script>
 	<script src="../resources/js/produto/novo.js"></script>
+	<script src="../resources/js/jquery.mask.js"></script>
 	</body>
 </html>

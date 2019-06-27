@@ -1,19 +1,9 @@
 package br.com.bixos.rainBebidas.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+public interface EstoqueDTO {
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class EstoqueDTO {
+	Long getQuantidade();
 
-	private Long compras;
-	private Double totalCompras;
-	private Long vendas;
-	private Double totalVendas;
+	Double getSomatorio();
 
 }
