@@ -43,12 +43,14 @@ public class MovimentoController {
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
 	public String salvar(@ModelAttribute(value = "movimento") Movimento movimento, Model model) {
 		try {
+			service.validaProdutos(movimento);
 			service.salvar(movimento);
 			return "redirect:/movimento/listar";
 		} catch (ProdutoSemQuantidadeException e) {
-			model.addAttribute("retorno", "Um dos produtos não tem quantidade suficiente para venda.");
+			model.addAttribute("error", e.getMessage());
+			movimento.setDataVencimento(null);
 			model.addAttribute("movimento", movimento);
-			return "redirect:/movimento/novo";
+			return "movimento/novo";
 		}
 	}
 

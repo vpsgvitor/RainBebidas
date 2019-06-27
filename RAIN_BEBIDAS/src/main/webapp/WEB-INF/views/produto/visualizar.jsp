@@ -4,8 +4,15 @@
 	<div class="row justify-content-center titulo">
 		<h3 class="display-4">Produtos</h3>
 	</div>
+	<c:if test="${not empty error}">
+			<div class="row justify-content-center col-md-12 col-lg-9">
+				<div class="alert alert-danger" role="alert">
+				  <c:out value="${error}"></c:out>
+				</div>
+			</div>
+		</c:if>
 	<div class="row justify-content-center titulo">
-		<div class="col"><button type="button" class="btn btn-primary mb-4" onclick="location.href='produto/novo'">Novo</button></div>
+		<div class="col"><button type="button" class="btn btn-primary mb-4" onclick="location.href='/produto/novo'">Novo</button></div>
 		<div class="col"><button type="button" class="btn btn-primary mb-4" onclick="location.href='/categorias'">Categorias de Produtos</button></div>
 	</div>
 	<div class="row justify-content-md-center">

@@ -41,6 +41,11 @@ public class ProdutoServiceImpl implements ProdutoService {
 		return repository.findOne(objectCod);
 	}
 
+	public boolean existeMovimento(Long codigo) {
+		Boolean existeMovimento = repository.existeMovimento(codigo);
+		return existeMovimento != null ? existeMovimento : false;
+	}
+
 	@Override
 	public void ajustaQuantidadeProduto(ProdutoDTO produto) throws ProdutoSemQuantidadeException {
 		Produto produtoAchado = repository.findOne(produto.getCodProduto());
@@ -48,7 +53,10 @@ public class ProdutoServiceImpl implements ProdutoService {
 			produtoAchado.setQuantidade(produtoAchado.getQuantidade() + produto.getQuantidade());
 		} else {
 			if (produtoAchado.getQuantidade().equals(new Double(0))) {
-				throw new ProdutoSemQuantidadeException("Produto sem quantidade");
+				throw new ProdutoSemQuantidadeException("Um dos produtos não tem quantidade suficiente para venda.");
+			}
+			if (produtoAchado.getQuantidade() < produto.getQuantidade()) {
+				throw new ProdutoSemQuantidadeException("Um dos produtos não tem quantidade suficiente para venda.");
 			}
 			produtoAchado.setQuantidade(produtoAchado.getQuantidade() - produto.getQuantidade());
 		}

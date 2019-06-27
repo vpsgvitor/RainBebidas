@@ -2,12 +2,8 @@ package br.com.bixos.rainBebidas.model;
 
 public interface EstoqueDTO {
 
-	Long getCompras();
+	Long getQuantidade();
 
-	Double getTotalCompras();
-
-	Long getVendas();
-
-	Double getTotalVendas();
+	Double getSomatorio();
 
 }

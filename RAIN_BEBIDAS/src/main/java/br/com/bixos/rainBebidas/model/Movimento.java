@@ -40,6 +40,8 @@ public class Movimento implements EntidadePersistente {
 
 	private Double valor;
 
+	private Integer qntProdutos;
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate data;
 
@@ -49,7 +51,7 @@ public class Movimento implements EntidadePersistente {
 	@Enumerated(EnumType.STRING)
 	private TipoMovimento tipoMovimento;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "movimento")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "movimento")
 	private List<ProdutoMovimento> produtos = new ArrayList<>();
 
 	@OneToOne

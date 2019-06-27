@@ -17,8 +17,8 @@
 							<tr>
 								<th scope="col">Data movimento</th>
 								<th scope="col">Cliente Fornecedor</th>
-								<th scope="col">CPF/CNPJ</th>
 								<th scope="col">Tipo Movimento</th>
+								<th scope="col">Qnt. Produtos</th>
 								<th scope="col">Valor</th>
 								<th scope="col">#</th>
 							</tr>
@@ -29,9 +29,9 @@
 									<td><fmt:parseDate  value="${movimento.data}" type="date" pattern="yyyy-MM-dd" var="parsed" />
 										<fmt:formatDate value="${parsed}" type="date" pattern="dd/MM/yyyy"/></td>
 									<td>${movimento.clienteFornecedor.pessoa.nome}</td>
-									<td>${not empty movimento.clienteFornecedor.cnpj ? movimento.clienteFornecedor.cnpj : movimento.clienteFornecedor.pessoa.cpf}</td>
 									<td>${movimento.tipoMovimento}</td>
-									<td>${movimento.valor}</td>
+									<td>${movimento.qntProdutos}</td>
+									<td><fmt:formatNumber value="${movimento.valor}" type="currency"/></td>
 									<td>
 										<button class="btn btn-outline-primary btn-sm" onclick="location.href='/movimento/visualizar/${movimento.codigo}'"><i class="fas fa-eye"></i></button>
 									</td>

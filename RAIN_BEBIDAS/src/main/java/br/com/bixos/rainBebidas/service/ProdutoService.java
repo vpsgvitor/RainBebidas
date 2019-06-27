@@ -8,4 +8,5 @@ public interface ProdutoService extends BasicCrud<Produto> {
 
 	void ajustaQuantidadeProduto(ProdutoDTO produto) throws ProdutoSemQuantidadeException;
 
+	boolean existeMovimento(Long codigo);
 }

@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.bixos.rainBebidas.model.EstoqueDTO;
+import br.com.bixos.rainBebidas.model.EstoqueVO;
 import br.com.bixos.rainBebidas.model.Produto;
+import br.com.bixos.rainBebidas.model.util.TipoMovimento;
 import br.com.bixos.rainBebidas.repository.EstoqueRepository;
 import br.com.bixos.rainBebidas.service.EstoqueService;
 import br.com.bixos.rainBebidas.service.ProdutoService;
@@ -25,7 +26,10 @@ public class EstoqueServiceImpl implements EstoqueService {
 	}
 
 	@Override
-	public EstoqueDTO getInfo() {
-		return !repository.findInfoEstoque().isEmpty() ? repository.findInfoEstoque().get(0) : null;
+	public EstoqueVO getInfo() {
+		EstoqueVO estoque = new EstoqueVO(repository.findParaEstoque(TipoMovimento.ENTRADA),
+				repository.findParaEstoque(TipoMovimento.SAIDA));
+
+		return estoque;
 	}
 }

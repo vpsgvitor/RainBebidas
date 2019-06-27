@@ -33,10 +33,12 @@ public class ProdutoMovimento implements EntidadePersistente {
 
 	private Double valor;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	private Double valorTotal;
+
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Movimento movimento;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "codProduto")
 	private Produto produto;
 }
