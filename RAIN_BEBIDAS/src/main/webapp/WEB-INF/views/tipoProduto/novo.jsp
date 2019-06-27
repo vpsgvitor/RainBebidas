@@ -4,10 +4,10 @@
 <c:import url="../utils/_header.jsp"></c:import>
 
 <div class="container">
-	<div class="row justify-content-center titulo">
-		<h3 class="display-4">Nova categoria de produtos</h3>
+	<div class="row justify-content-center">
+		<h3 class="display-4 m-5">Nova categoria de produtos</h3>
 	</div>
-	<div class="row justify-content-md-center">
+	<div class="row justify-content-center">
 		<div class="col-md-12 col-lg-9">
 			<form:form action="/categorias/salvar" method="POST" class="col" modelAttribute="tipoProduto">
 

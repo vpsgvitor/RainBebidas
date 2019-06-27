@@ -2,7 +2,7 @@
 <c:import url="../utils/_header.jsp"></c:import>
 
 <div class="container">
-	<div class="row justify-content-center titulo">
+	<div class="text-center titulo">
 		<h3 class="display-4">Adicionar Novo Produto</h3>
 	</div>
 	<div class="row justify-content-md-center">

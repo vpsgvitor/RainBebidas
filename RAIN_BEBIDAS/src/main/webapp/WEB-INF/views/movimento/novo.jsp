@@ -86,7 +86,7 @@
 	</c:choose>
 	
 	<div class="container">
-		<div class="row justify-content-center titulo">
+		<div class="text-center titulo">
 			<h2 class="display-4" style="margin-top: 33px;">${title}</h2>
 		</div>
 		<c:if test="${not empty error}">
