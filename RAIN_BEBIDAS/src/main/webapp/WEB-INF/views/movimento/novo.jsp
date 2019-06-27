@@ -70,14 +70,16 @@
 			<script>
 			 window.addEventListener('load', function () {
 				bloqueiaTudo();
+				$(".add-prod").addClass('d-none');
 			}, false);
 			</script>
 		</c:when>
 		<c:otherwise>
 			<c:set var="title" value="Novo Movimento" />
 			<script>
-			 window.addEventListener('load', function () {
+				 window.addEventListener('load', function () {
 					desbloqueiaTudo();
+					$(".add-prod").removeClass('d-none');
 				}, false);
 			</script>
 		</c:otherwise>
@@ -100,13 +102,15 @@
 					<div class="form-group">
 						<input type="hidden" name="codigo" class="form-control" id="codigo" value="${movimento.codigo}" />
 						<input type="hidden" name="clienteFornecedor.codigo" class="form-control" id="idCliente" value="${movimento.clienteFornecedor.codigo}" />
+						<label for="ACCliente">Nome Cliente/Fornecedor:</label>
 						<input type="text" class="form-control block" name="clienteFornecedor.pessoa.nome" placeholder="Cliente/Fornecedor" 
 							id="ACCliente" aria-label="Cliente" aria-describedby="basic-addon3" value="${movimento.clienteFornecedor.pessoa.nome}" required>
 					</div>
 					<div class="form-group">
+						<label for="tipoMovimento">Tipo do movimento:</label>
 						 <select class="form-control block" id="tipoMovimento" name="tipoMovimento" required>
-					      <option value="SAIDA">Venda</option>
-					      <option value="ENTRADA">Compra</option>
+					      <option value="SAIDA" <c:if test="${movimento.tipoMovimento eq 'SAIDA'}">selected</c:if>>Venda</option>
+					      <option value="ENTRADA" <c:if test="${movimento.tipoMovimento eq 'ENTRADA'}">selected</c:if>>Compra</option>
 					    </select>
 					</div>
 					
@@ -116,8 +120,8 @@
 					</div>
 					
 					<fieldset>
-						<legend class="col-form-label">Produtos</legend>
-						<div class="row mb-2">
+						<legend class="col-form-label">Produtos:</legend>
+						<div class="row mb-2 add-prod">
 							<div class="input-group col">
 							  <input type="hidden" id="IdProduto">
 							  <input type="text" class="form-control block" placeholder="Produto" id="ACProduto" aria-label="Produto" aria-describedby="basic-addon2">
@@ -127,7 +131,7 @@
 						  </div>
 						</div>
 						  
-					   <div class="row mb-3">
+					   <div class="row mb-3 add-prod">
 						    <div class="col">
 						      <input type="number" class="form-control block" placeholder="Quantidade"  id="prod-qnt">
 						    </div>

@@ -22,37 +22,37 @@
 			</div>
 			<div class="row justify-content-md-center">
 						
-				<div class="col-md-12 col-lg-9">
+				<div class="col-md-12 col-lg-12">
 					<table class="table table-bordered table-hover table-striped">
 						<thead>
 							<tr>
-								<th scope="col">Lançamento</th>
-								<th scope="col">Cliente / Fornecedor</th>
-								<th scope="col">Telefone</th>
-								<th scope="col">Tipo</th>
-								<th scope="col">Valor</th>
-								<th scope="col">Vencimento</th>
-								<th scope="col">Situação</th>
-								<th scope="col">Data Liquidação</th>
-								<th scope="col">#</th>
+								<th class="text-center">Lançamento</th>
+								<th class="text-center">Cliente / Fornecedor</th>
+								<th class="text-center">Telefone</th>
+								<th class="text-center">Tipo</th>
+								<th class="text-center">Valor</th>
+								<th class="text-center">Vencimento</th>
+								<th class="text-center">Data Liquidação</th>
+								<th class="text-center">Situação</th>
+								<th class="text-center">#</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${contas}" var="conta">
 								<tr>
-									<td><fmt:parseDate  value="${conta.dataLancamento}" type="date" pattern="yyyy-MM-dd" var="parsed1" />
+									<td class="text-center"><fmt:parseDate  value="${conta.dataLancamento}" type="date" pattern="yyyy-MM-dd" var="parsed1" />
 										<fmt:formatDate value="${parsed1}" type="date" pattern="dd/MM/yyyy"/></td>
 									<td>${conta.clienteFornecedor.pessoa.nome}</td>
-									<td>${conta.clienteFornecedor.pessoa.telefone}</td>
-									<td>${conta.tipoConta}</td>
-									<td><fmt:formatNumber value="${conta.valor}" type="currency"/></td>
-									<td><fmt:parseDate  value="${conta.dataVencimento}" type="date" pattern="yyyy-MM-dd" var="parsed2" />
+									<td class="text-center">${conta.clienteFornecedor.pessoa.telefone}</td>
+									<td class="text-center">${conta.tipoConta}</td>
+									<td class="text-center"><fmt:formatNumber value="${conta.valor}" type="currency"/></td>
+									<td class="text-center"><fmt:parseDate  value="${conta.dataVencimento}" type="date" pattern="yyyy-MM-dd" var="parsed2" />
 										<fmt:formatDate value="${parsed2}" type="date" pattern="dd/MM/yyyy"/></td>
-									<td>${conta.situacao}</td>
 										<fmt:parseDate  value="${conta.dataBaixa}" type="date" pattern="yyyy-MM-dd" var="parsed3" />
-									<td><c:if test="${not empty conta.dataBaixa}"><fmt:formatDate value="${parsed3}" type="date" pattern="dd/MM/yyyy"/></c:if>
+									<td class="text-center"><c:if test="${not empty conta.dataBaixa}"><fmt:formatDate value="${parsed3}" type="date" pattern="dd/MM/yyyy"/></c:if>
 										<c:if test="${empty conta.dataBaixa}">Ainda não baixado</c:if></td>
-									<td>
+									<td class="text-center">${conta.situacao}</td>
+									<td class="text-center">
 										<button class="btn btn-outline-success btn-sm" onclick="populaModal(${conta.codigo}, ${conta.situacao eq 'FINALIZADO'});" data-toggle="modal" data-target="#baixarConta">
 										<i class="fas fa-money-bill-wave"></i></button>
 									</td>
